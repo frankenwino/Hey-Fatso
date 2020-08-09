@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">Body Fat Percentage</h1>
+    <table id="t01">
+      <tr>
+        <td><b>Sex</b></td>
+        <td>{{ sex }}</td>
+      </tr>
+      <tr>
+        <td><b>Height</b></td>
+        <td>{{ height_cm }}cm</td>
+      </tr>
+      <tr>
+        <td><b>Fat Mass</b></td>
+        <td>{{ fat_mass_kg }}kg</td>
+      </tr>
+      <tr>
+        <td><b>Lean Mass</b></td>
+        <td>{{ lean_mass_kg }}kg</td>
+      </tr>
+      <tr>
+        <td><b>Body Fat Percentage</b></td>
+        <td>{{ body_fat_percentage }}%</td>
+      </tr>
+      <tr>
+        <td><b>Meets US Navy Standard</b></td>
+        <td>{{ meets_us_navy_standard }}</td>
+      </tr>
+    </table>
+    <p>The limit of body fat percentage for US Navy service members:</p>
+    <p style = "text-indent:1cm;">Age 18 to 21 - 22% for males, 33% for females</p>
+    <p style = "text-indent:1cm;">Age 22 to 29 - 23% for males, 34% for females</p>
+    <p style = "text-indent:1cm;">Age 30 to 39 - 24% for males, 35% for females</p>
+    <p style = "text-indent:1cm;">Age over 40 - 26% for males, 36% for females</p>
+  </div>
+</div>
+
+{% endblock %}

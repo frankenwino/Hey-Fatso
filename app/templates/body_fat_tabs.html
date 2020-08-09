@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">Body Fat Percentage Calculator</h1>
+    <p class="lead">This will help you work out your approximate body fat percentage.</p>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="male-tab" data-toggle="tab" href="#male" role="tab" aria-controls="male" aria-selected="true">Male</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="female-tab" data-toggle="tab" href="#female" role="tab" aria-controls="female" aria-selected="false">Female</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="male" role="tabpanel" aria-labelledby="male-tab"><form action="" method="post" novalidate>
+        {{ male_form.hidden_tag() }}
+        <p>
+          {{ male_form.age.label }}<br>
+          {{ male_form.age(size=32) }}
+        </p>
+        <p>
+          {{ male_form.weight_kg.label }}<br>
+          {{ male_form.weight_kg(size=32) }}
+        </p>
+        <p>
+          {{ male_form.height_cm.label }}<br>
+          {{ male_form.height_cm(size=32) }}
+        </p>
+        <p>
+          {{ male_form.neck_cm.label }}<br>
+          {{ male_form.neck_cm(size=32) }}
+        </p>
+        <p>
+          {{ male_form.waist_cm.label }}<br>
+          {{ male_form.waist_cm(size=32) }}
+        </p>
+        <p>{{ male_form.calculate() }}</p>
+      </form>
+    </div>
+      <div class="tab-pane fade" id="female" role="tabpanel" aria-labelledby="female-tab"><form action="" method="post" novalidate>
+        {{ female_form.hidden_tag() }}
+        <p>
+          {{ female_form.age.label }}<br>
+          {{ female_form.age(size=32) }}
+        </p>
+        <p>
+          {{ female_form.weight_kg.label }}<br>
+          {{ female_form.weight_kg(size=32) }}
+        </p>
+        <p>
+          {{ female_form.height_cm.label }}<br>
+          {{ female_form.height_cm(size=32) }}
+        </p>
+        <p>
+          {{ female_form.neck_cm.label }}<br>
+          {{ female_form.neck_cm(size=32) }}
+        </p>
+        <p>
+          {{ female_form.waist_cm.label }}<br>
+          {{ female_form.waist_cm(size=32) }}
+        </p>
+        <p>
+          {{ female_form.hip_cm.label }}<br>
+          {{ female_form.hip_cm(size=32) }}
+        </p>
+        <p>{{ female_form.calculate() }}</p>
+      </form>
+    </div>
+    </div>
+    <p>The body fat percentage equation was developed at the US Naval Health Research Center (NHRC), San Diego, California.</p>
+    <p>For men, it looks like this:</p>
+    <p><i>%BF = 495 / ( 1.0324 - 0.19077 * log10( waist_cm - neck_cm ) + 0.15456 * log10( height_cm ) ) - 450</i></p>
+
+    <p>And for women:</p>
+    <p><i>%BF = 495 / ( 1.29579 - 0.35004 * log10( waist_cm + hip_cm - neck_cm ) + 0.22100 * log10( height_cm ) ) - 450</i></p>
+    <p>The formulas presented above are for measurements in metric units.</p>
+  </div>
+</div>
+
+
+
+{% endblock %}

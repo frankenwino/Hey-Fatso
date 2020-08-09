@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">Body Fat Percentage Calculator</h1>
+    <p class="lead">This will help you work out what your approximate body fat percentage is.</p>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.sex.label }}<br>
+        {{ form.sex }}
+      </p>
+      <p>
+        {{ form.weight_kg.label }}<br>
+        {{ form.weight_kg(size=32) }}
+      </p>
+      <p>
+        {{ form.height_cm.label }}<br>
+        {{ form.height_cm(size=32) }}
+      </p>
+      <p>
+        {{ form.waist_cm.label }}<br>
+        {{ form.waist_cm(size=32) }}
+      </p>
+      <p>
+        {{ form.neck_cm.label }}<br>
+        {{ form.neck_cm(size=32) }}
+      </p>
+      <p>
+        {{ form.hip_cm.label }}<br>
+        {{ form.hip_cm(size=32) }}
+      </p>
+      <p>{{ form.calculate() }}</p>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

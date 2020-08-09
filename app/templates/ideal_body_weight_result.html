@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">Ideal Body Weight</h1>
+    <table id="t01">
+      <tr>
+        <td><b>Sex</b></td>
+        <td>{{ sex }}</td>
+      </tr>
+      <tr>
+        <td><b>Height</b></td>
+        <td>{{ height_cm }}cm</td>
+      </tr>
+      <tr>
+        <td><b>Peterson formula (2016)</b></td>
+        <td>{{ ideal_weight_kg_peterson }}kg</td>
+      </tr>
+      <tr>
+        <td><b>DR Miller formula (1983)</b></td>
+        <td>{{ ideal_weight_kg_drm }}kg</td>
+      </tr>
+      <tr>
+        <td><b>JD Robinson formula (1983)</b></td>
+        <td>{{ ideal_weight_kg_jdr }}kg</td>
+      </tr>
+      <tr>
+        <td><b>BJ Devine formula (1974)</b></td>
+        <td>{{ ideal_weight_kg_bjd }}kg</td>
+      </tr>
+      <tr>
+        <td><b>GJ Hamwi formula (1964)</b></td>
+        <td>{{ ideal_weight_kg_gjh }}kg</td>
+      </tr>
+      <tr>
+        <td><b>Broca formula (1871)</b></td>
+        <td>{{ ideal_weight_kg_broca }}kg</td>
+      </tr>
+      <tr>
+        <td><b>Average of all formulas</b></td>
+        <td><b>{{ ideal_weight_kg_average }}kg</b></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+{% endblock %}

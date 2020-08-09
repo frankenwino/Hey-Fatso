@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">Ideal Bodyweight Calculator</h1>
+    <p class="lead">This will help you work out your approximate ideal body weight.</p>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.sex.label }}<br>
+        {{ form.sex }}
+      </p>
+      <p>
+        {{ form.height_cm.label }}<br>
+        {{ form.height_cm(size=32) }}
+      </p>
+      <p>{{ form.calculate() }}</p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

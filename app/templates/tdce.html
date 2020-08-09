@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-6">Total Daily Calorie Expenditure Calculator</h1>
+    <p class="lead">This will help you work out how many calories your body needs per day.</p>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.sex.label }}<br>
+        {{ form.sex }}
+      </p>
+      <p>
+        {{ form.weight_kg.label }}<br>
+        {{ form.weight_kg(size=32) }}
+      </p>
+      <p>
+        {{ form.height_cm.label }}<br>
+        {{ form.height_cm(size=32) }}
+      </p>
+      <p>
+        {{ form.age.label }}<br>
+        {{ form.age(size=32) }}
+      </p>
+      <p>
+        {{ form.activity_level.label }}<br>
+        {{ form.activity_level }}
+      </p>
+      <p>
+        {{ form.body_fat_percentage.label }}<br>
+        {{ form.body_fat_percentage(size=32) }}
+      </p>
+      <p>{{ form.calculate() }}</p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
