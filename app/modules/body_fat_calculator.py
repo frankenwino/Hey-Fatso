@@ -106,7 +106,7 @@ def us_navy_body_fat_percentage_female(sex, height_cm, weight_kg, waist_cm, neck
     body_fat_percentage = 495 / ( 1.29579 - 0.35004 * log10( waist_cm + hip_cm - neck_cm ) + 0.22100 * log10( height_cm ) ) - 450
 
 
-    fat_mass_kg = weight_kg * (body_fat / 100)
+    fat_mass_kg = weight_kg * (body_fat_percentage / 100)
     lean_mass_kg = weight_kg - fat_mass_kg
 
 
