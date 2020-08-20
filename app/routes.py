@@ -10,8 +10,8 @@ from app.modules import basal_metabolic_rate_calculator, ideal_body_weight_calcu
 #     return render_template('index.html', title='Home', user=user)
 
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 @app.route('/tdce', methods=['GET', 'POST'])
 def tdce():
     form = TDCEForm()
